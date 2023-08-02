@@ -39,3 +39,10 @@ console.log(capitalize('meU priMeiro Estágio como DEV'))
 
 // Write a function called lastLetter that takes a string and returns the very last letter of that string:
 // lastLetter("abcd") should return "d"
+
+function lastLetter(string) {
+    let letrafinal = string.slice(-1)
+    return letrafinal
+}
+
+console.log(lastLetter('Olá mundo'))
