@@ -2,23 +2,23 @@
 // Write a function called add7 that takes one number and returns that number + 7.
 
 
-// function add7(valor) {
-//     return valor + 7
-// }
+function add7(valor) {
+    return valor + 7
+}
 
 // Arrow function
-// let add7 = valor => valor + 7;
+let add7 = valor => valor + 7;
 
 
 
 // Write a function called multiply that takes 2 numbers and returns their product.
 
-// function multiply(valor, valor2) {
-//     return valor * valor2
-// }
+function multiply(valor, valor2) {
+    return valor * valor2
+}
 
 // Arrow function
-// let multiply = (valor, valor2) => valor * valor2
+let multiply = (valor, valor2) => valor * valor2
 
 
 
