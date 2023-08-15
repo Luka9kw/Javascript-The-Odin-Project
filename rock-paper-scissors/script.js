@@ -1,43 +1,56 @@
-let playerChoice = 'ScissoRS'
+//Escolha do jogador
+let playerChoice = 'roCK'
+
+//Corrige a primeira letra para maiúsculo e as seguintes para minúsculo
 let playerSelection = playerChoice.charAt().toLocaleUpperCase() + playerChoice.slice(1).toLocaleLowerCase()
 
-let computerSelection = getComputerChoice()
+//Função que seleciona um valor para o computador quando chamada
 function getComputerChoice() {
     let array = ['Rock', 'Paper', 'Scissors']
     let math = Math.floor(Math.random() * 3)
     return array[math]
 }
 
+//Cálculo dos resultados
 function playRound(playerSelection, computerSelection) {
     //Condições de vitória
     if (playerSelection === 'Rock' && computerSelection === 'Scissors') {
-        console.log(`You Win: ${playerSelection} beats ${computerSelection}`)
+        return `You Win: ${playerSelection} beats ${computerSelection}`
     }
 
     else if (playerSelection === 'Paper' && computerSelection === 'Rock') {
-        console.log(`You Win: ${playerSelection} beats ${computerSelection}`)
+        return `You Win: ${playerSelection} beats ${computerSelection}`
     }
 
     else if (playerSelection === 'Scissors' && computerSelection === 'Paper') {
-        console.log(`You Win: ${playerSelection} beats ${computerSelection}`)
+        return `You Win: ${playerSelection} beats ${computerSelection}`
     }
     //Condições de Derrota
     else if (computerSelection === 'Rock' && playerSelection === 'Scissors') {
-        console.log(`You Lose: ${computerSelection} beats ${playerSelection}`)
+        return `You Lose: ${computerSelection} beats ${playerSelection}`
     }
 
     else if (computerSelection === 'Paper' && playerSelection === 'Rock') {
-        console.log(`You Lose: ${computerSelection} beats ${playerSelection}`)
+        return `You Lose: ${computerSelection} beats ${playerSelection}`
     }
 
     else if (computerSelection === 'Scissors' && playerSelection === 'Paper') {
-        console.log(`You Lose: ${computerSelection} beats ${playerSelection}`)
+        return `You Lose: ${computerSelection} beats ${playerSelection}`
     }
     //Condições de empate
     else if (computerSelection === playerSelection) {
-        console.log(`You Tie: ${playerSelection} ties ${computerSelection}`)
+        return `You Tie: ${playerSelection} ties ${computerSelection}`
     }
 }
 
-console.log(playerSelection)
-playRound(playerSelection, computerSelection)
+
+//Jogo final
+function game() {
+    for (i = 0; i < 5; i++) {
+        //Escolha do computador dentro do jogo final
+        let computerSelection = getComputerChoice()
+        console.log(playRound(playerSelection, computerSelection))
+    }
+}
+
+game()
