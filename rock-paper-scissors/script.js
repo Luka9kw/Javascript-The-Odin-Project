@@ -1,5 +1,5 @@
 //Escolha do jogador
-let playerChoice = 'roCK'
+let playerChoice = window.prompt()
 
 //Corrige a primeira letra para maiúsculo e as seguintes para minúsculo
 let playerSelection = playerChoice.charAt().toLocaleUpperCase() + playerChoice.slice(1).toLocaleLowerCase()
@@ -11,35 +11,34 @@ function getComputerChoice() {
     return array[math]
 }
 
+let playerPoints = 0
+let computerPoints = 0
+
 //Cálculo dos resultados
 function playRound(playerSelection, computerSelection) {
     //Condições de vitória
     if (playerSelection === 'Rock' && computerSelection === 'Scissors') {
+        playerPoints++
         return `You Win: ${playerSelection} beats ${computerSelection}`
     }
 
     else if (playerSelection === 'Paper' && computerSelection === 'Rock') {
+        playerPoints++
         return `You Win: ${playerSelection} beats ${computerSelection}`
     }
 
     else if (playerSelection === 'Scissors' && computerSelection === 'Paper') {
+        playerPoints++
         return `You Win: ${playerSelection} beats ${computerSelection}`
-    }
-    //Condições de Derrota
-    else if (computerSelection === 'Rock' && playerSelection === 'Scissors') {
-        return `You Lose: ${computerSelection} beats ${playerSelection}`
-    }
-
-    else if (computerSelection === 'Paper' && playerSelection === 'Rock') {
-        return `You Lose: ${computerSelection} beats ${playerSelection}`
-    }
-
-    else if (computerSelection === 'Scissors' && playerSelection === 'Paper') {
-        return `You Lose: ${computerSelection} beats ${playerSelection}`
     }
     //Condições de empate
     else if (computerSelection === playerSelection) {
-        return `You Tie: ${playerSelection} ties ${computerSelection}`
+        return `That's a Tie: ${playerSelection} ties ${computerSelection}`
+    }
+    //Condições de Derrota
+    else {
+        computerPoints++
+        return `You Lose: ${computerSelection} beats ${playerSelection}`
     }
 }
 
@@ -50,7 +49,23 @@ function game() {
         //Escolha do computador dentro do jogo final
         let computerSelection = getComputerChoice()
         console.log(playRound(playerSelection, computerSelection))
+        console.log(playerPoints, computerPoints)
     }
+
+    //Cálculo de Pontos
+     if(playerPoints > computerPoints) {
+        console.log('The Player Wins!')
+     }
+
+     else if (computerPoints > playerPoints) {
+        console.log('The Computer Wins')
+     }
+
+     else {
+        console.log('Draw')
+     }
 }
 
 game()
+
+
