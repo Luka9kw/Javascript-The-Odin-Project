@@ -4,4 +4,4 @@ div.style.color = 'blue'; // Adiciona uma regra de estilo
 div.style.cssText = 'color: blue; background: white;' // Adiciona várias regras de estilo
 div.setAttribute('style', 'color: blue; background: white;') // Mesma coisa de outro jeito
 
-div.setAttribute('style', 'color: blue')
+let changes = ''
