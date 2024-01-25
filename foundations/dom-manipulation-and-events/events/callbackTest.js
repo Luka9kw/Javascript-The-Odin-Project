@@ -5,6 +5,9 @@ function testCallback(array, callback) {
 }
 
 const myArray = [1, 2, 3, 1000]
-testCallback(myArray, (callbackItem) => {
-    console.log(callbackItem + 2)
+
+
+// A chamada da função recebe uma arrow function como segundo paramêtro, esse é o callback. Uma função chamando outra função.
+testCallback(myArray, (valorloopado) => {
+    console.log(valorloopado + 2)
 })
