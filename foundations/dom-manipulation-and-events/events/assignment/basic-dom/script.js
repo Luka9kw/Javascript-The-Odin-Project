@@ -9,3 +9,4 @@ link.href = "https://developer.mozilla.org";
 
 section.appendChild(paragraph);
 
+section.appendChild(link); // Desce o link par o final da página onde está loclizado o node section.
