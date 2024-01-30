@@ -6,13 +6,27 @@ link.textContent = "Mozilla Developer Network";
 link.href = "https://developer.mozilla.org";
 paragraph.textContent = "We hope you enjoyed the ride.";
 
+
 section.appendChild(paragraph);
-// section.appendChild(link); // Desce o link para o final da página onde está loclizado o node section.
+// section.appendChild(link);
 
 // Criando um text node
-const text = document.createTextNode(" - the premier source for web development knowledge.")
-paragraph.appendChild(text)
+const text = document.createTextNode(" - the premier source for web development knowledge.");
+paragraph.appendChild(text);
 
 //Clonando um node
-const link2 = link.cloneNode(true)
-section.appendChild(link2)
+const link2 = link.cloneNode(true);
+section.appendChild(link2);
+
+//Removendo um node
+section.removeChild(link2);
+
+//Removendo um node (método alternativo, não funciona em navegadores antigos)
+text.remove(); 
+
+//Manipulating styles
+paragraph.style.color = "white";
+paragraph.style.backgroundColor = "black";
+paragraph.style.padding = "10px";
+paragraph.style.width = "250px";
+paragraph.style.textAlign = "center";
