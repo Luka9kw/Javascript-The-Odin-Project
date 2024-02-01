@@ -25,8 +25,10 @@ section.removeChild(link2);
 text.remove(); 
 
 //Manipulating styles
-paragraph.style.color = "white";
-paragraph.style.backgroundColor = "black";
-paragraph.style.padding = "10px";
-paragraph.style.width = "250px";
-paragraph.style.textAlign = "center";
+// paragraph.style.color = "white";
+// paragraph.style.backgroundColor = "black";
+// paragraph.style.padding = "10px";
+// paragraph.style.width = "250px";
+// paragraph.style.textAlign = "center";
+
+paragraph.setAttribute("class", "highlight");
