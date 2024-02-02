@@ -40,10 +40,13 @@
         const btn2 = document.createElement("button");
         li.appendChild(span);
         li.appendChild(btn2);
-        span.textContent("Delete");
+        span.textContent = "Delete";
+
         btn.addEventListener("click", () => {
             let inptValue = inpt.value;
+            console.log(inptValue)
             inptValue = '';
+            
         })
 
     </script>
