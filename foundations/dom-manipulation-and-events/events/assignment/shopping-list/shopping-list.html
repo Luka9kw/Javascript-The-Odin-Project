@@ -46,21 +46,21 @@
       const span = document.createElement("span");
       const deleteBtn = document.createElement("button");
 
-      ul.appendChild(li)
+      ul.appendChild(li);
       li.appendChild(span);
       li.appendChild(deleteBtn);
 
       span.textContent = inptValue;
-      deleteBtn.textContent = "Delete"
+      deleteBtn.textContent = "Delete";
       inptValue = '';
 
       deleteBtn.addEventListener("click", () => {
-      ul.removeChild(li)
-    })
-    inpt.focus()
+        ul.removeChild(li);
+      })
+      inpt.focus();
     })
 
-  
+
 
   </script>
 </body>
