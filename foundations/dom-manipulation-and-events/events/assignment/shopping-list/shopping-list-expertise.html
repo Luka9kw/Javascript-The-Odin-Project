@@ -34,9 +34,28 @@
 
   <script>
     const buttonAdd = document.querySelector("button");
-    const itemInput = document.querySelector("#item")
+    const itemInput = document.querySelector("#item");
+    const list = document.querySelector("ul");
 
     buttonAdd.addEventListener("click", () => {
-        let itemValue = itemInput
+        let itemValue = itemInput.value;
+
+        let listElement = document.createElement("li");
+        let span = document.createElement("span");
+        let deleteBtn = document.createElement("button");
+        
+        
+        list.appendChild(listElement);
+        listElement.appendChild(span);
+        listElement.appendChild(deleteBtn);
+        
+        
+        span.textContent = itemValue;
+        deleteBtn.textContent = "Delete";
+
     })
+
+    function deleteBtn() {
+      
+    }
   </script>
