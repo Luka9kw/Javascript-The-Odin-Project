@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mouse Events</title>
+</head>
+<body>
+    <h1 id="mouseEnter">Mouse Enter</h1>  
+    <h1 id="mouseLeave">Mouse Leaves</h1>
+    <h1 id="mouseClick">Mouse Click</h1>
+
+    <script>
+        const mouseEnter = document.querySelector('#mouseEnter')
+        mouseEnter.addEventListener('mouseenter', () => {
+            console.log('mouse entered')
+        })
+        
+        const mouseLeave = document.querySelector('#mouseLeave')
+        mouseLeave.addEventListener('mouseleave', () => {
+            console.log('mouse leaved')
+        })
+
+        const mouseClick = document.querySelector('#mouseClick')
+        mouseClick.addEventListener('click', () => {
+            console.log('clicked')
+        })
+
+
+    </script>
+</body>
+</html>
