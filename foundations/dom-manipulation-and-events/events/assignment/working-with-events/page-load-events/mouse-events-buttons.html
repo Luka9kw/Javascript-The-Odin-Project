@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>JS Mouse Events - Button Demo</title>
+</head>
+
+<body>
+    <button id="btn">Click me with any mouse button: left, right, middle, ...</button>
+    <p id="message"></p>
+
+    <script>
+        // event.preventDefault() para evitar que o click direito abra o menu de contexto
+        const btn = document.querySelector('#btn');
+        btn.addEventListener("contextmenu", (event) => {
+            event.preventDefault();
+        })
+
+        // .button identifica o botão do mouse que foi pressionado.
+        btn.addEventListener("mouseup", (event) => {
+            let msg = document.querySelector("#message");
+            switch (event.button) {
+                case 0:
+                    msg.textContent = "botão do lado esquerdo foi pressionado.";
+                    break;
+                case 1:
+                    msg.textContent = "botão do meio (scroll) foi pressionado.";
+                    break;
+                case 2:
+                    msg.textContent = "botão direito foi pressionado.";
+                    break;
+                default:
+                    msg.textContent = `botão ${event.button}não indentificado foi pressionado`;
+            }
+            // .button retorna o botão pressionado com valores a partir de 0, switch pode ser usado da forma acima.
+        })
+    </script>
+</body>
+
+</html>
