@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS Modifier Keys Demo</title>
+</head>
+<body>
+    <button id="btnKeys">Click me with Alt/Shift/Control or Windows pressed</button>
+    <p id="messageKeys"></p>
+
+    <script>
+        let btnKeys = document.querySelector('#btnKeys');
+
+        btnKeys.addEventListener('click', (event) => {
+            let keys = [];
+            if (event.shiftKey) keys.push('Tecla Shift');
+            if (event.ctrlKey) keys.push('Tecla Ctrl');
+            if (event.altKey) keys.push('Tecla Alt');
+            if (event.metaKey) keys.push('Tecla Windows');
+
+            let msg = document.querySelector('#messageKeys');
+            msg.textContent = `Keys: ${keys.join(' + ')}`;
+        })
+    </script>
+</body>
+</html>
