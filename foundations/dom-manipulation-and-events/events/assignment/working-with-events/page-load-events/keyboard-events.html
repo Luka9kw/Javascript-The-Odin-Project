@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,15 +8,24 @@
     <title>JavaScript Keyboard Events
     </title>
 </head>
+
 <body>
     <input type="text" id="message">
-    
-<script>
-    let message = document.querySelector('#message');
 
-    message.addEventListener('keydown', (event) => {
-        console.log(`key pressed: ${event.key} code: ${event.code}`)
-    });
-</script>
+    <script>
+        let message = document.querySelector('#message');
+
+        message.addEventListener('keydown', (event) => {
+            console.log(`(keydown) key pressed: ${event.key} code: ${event.code}`)
+        });
+        message.addEventListener('keypress', (event) => {
+            console.log(`(keypress) key pressed: ${event.key} code: ${event.code}`)
+        });
+        message.addEventListener('keyup', (event) => {
+            console.log(`(keyup) key pressed: ${event.key} code: ${event.code}`)
+        });
+
+    </script>
 </body>
+
 </html>
