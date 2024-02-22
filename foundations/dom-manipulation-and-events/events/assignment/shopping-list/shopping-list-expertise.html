@@ -5,7 +5,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Shopping List Alone</title>
-  <!-- Mesma coisa que a outra shopping list, mas feito sem auxílio externo. -->
+      <!-- Mesma coisa que a outra shopping list, mas feito sem auxílio externo. -->
   <style>
     li {
       margin-bottom: 10px;
@@ -33,41 +33,30 @@
   </ul>
 
   <script>
-    const button = document.querySelector("button");
-    const input = document.querySelector("#item");
+    const buttonAdd = document.querySelector("button");
+    const itemInput = document.querySelector("#item");
     const list = document.querySelector("ul");
 
+    buttonAdd.addEventListener("click", () => {
+        let itemValue = itemInput.value;
 
-
-    button.addEventListener("click", () => {
-      let itemValue = input.value;
-      input.value = '';
-      //Prevenindo inputs vazios.
-      if (itemValue == '') {
-        window.alert('Insira um elemento a lista.');
-        input.focus();
-      }
-
-      else {
-        //Adicionando seletores.
         let listElement = document.createElement("li");
         let span = document.createElement("span");
         let deleteBtn = document.createElement("button");
-        //Adicionando texto.
-        deleteBtn.textContent = "Delete";
-        span.textContent = itemValue;
-
-        //Adicionando a página.
+        
+        
         list.appendChild(listElement);
         listElement.appendChild(span);
         listElement.appendChild(deleteBtn);
+        
+        
+        span.textContent = itemValue;
+        deleteBtn.textContent = "Delete";
 
-        deleteBtn.addEventListener("click", () => {
-          list.removeChild(listElement);
-        });
-        input.value = '';
-        input.focus();
-      }
     })
 
+    function deleteElement() { 
+      
+      
+    }
   </script>
