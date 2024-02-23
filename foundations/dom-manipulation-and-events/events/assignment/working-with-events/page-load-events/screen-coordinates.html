@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -14,20 +15,30 @@
         }
     </style>
 </head>
+
 <body>
     <p>Move your mouse to see its location.</p>
     <div id="track"></div>
     <p id="log"></p>
 
     <script>
+
         let track = document.querySelector('#track');
-        track.addEventListener('mousemove', (event) => {
-            let log = document.querySelector('#log')
-            log.innerHTML = `
-            Screen X/Y: (${event.screenX}, ${event.screenY})
-            Client X/Y: (${event.clientX}, ${event.clientY})
-            `
-        });
+
+               track.addEventListener('mousemove', (event) => {
+                   let log = document.querySelector('#log');
+                   log.innerHTML = `
+                       Screen X/Y: (${event.screenX}, ${event.screenY})
+                       Client X/Y: (${event.clientX}, ${event.clientY})
+                       `
+                   console.log(event.screenX, event.screenY);
+               });
+    
+
+
+
+
     </script>
 </body>
+
 </html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event throttling</title>
+</head>
+
+<body>
+
+    <script>
+        //Adiciona um gargalo de 300ms ao evento scroll ou a qualquer evento desejado.
+        let scrolling = false;
+
+        window.scroll = () => {
+            scrolling = true;
+        };
+        setInterval(() => {
+            if (scrolling) {
+                scrolling = false;
+            }
+        }, 300);
+
+        
+    </script>
+</body>
+
+</html>
