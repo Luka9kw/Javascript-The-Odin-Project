@@ -24,42 +24,31 @@
     <script>
 
         let track = document.querySelector('#track');
-        let startThrottling = false;
+        let log = document.querySelector('#log');
 
-        
-        function tracking() {
-            track.addEventListener('mousemove', (event) => {
-                let log = document.querySelector('#log');
-                log.innerHTML = `
-                Screen X/Y: (${event.screenX}, ${event.screenY})
-                Client X/Y: (${event.clientX}, ${event.clientY})
-                `
-                console.log(event.screenX, event.screenY);
-            })
-        };
+        function debounce(mainFuncion, delay) {
+            let timer;
+            return function(...args) {
+                clearTimeout(timer);
 
-       
-
-        function throttling() {
-
-            track.addEventListener('mousemove', () => {
-            startThrottling = true;
-        })
-
-        setInterval(() => {
-            if (startThrottling) {
-                startThrottling = false;
+                timer = setTimeout(() => {
+                    mainFuncion(...args);
+                }, delay);
             }
-        }, 500);
-            
         };
+
+        function throttling(event) {
+            log.innerHTML = `
+            Screen X/Y: (${event.screenX}, ${event.screenY})
+            Client X/Y: (${event.clientX}, ${event.clientY})
+            `
+            console.log(event.screenX, event.screenY);  
+        };
+
+        const debouncedThrottling = debounce(throttling, 100);
         
-        window.addEventListener('load', () => {
-            console.log('loaded successfully');
-            throttling();
-        })
-        
-        </script>
+        track.addEventListener('mousemove', debouncedThrottling);
+    </script>
 </body>
 
 
