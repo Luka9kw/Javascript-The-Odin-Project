@@ -30,7 +30,6 @@
             let timer;
             return function(...args) {
                 clearTimeout(timer);
-
                 timer = setTimeout(() => {
                     mainFuncion(...args);
                 }, delay);
