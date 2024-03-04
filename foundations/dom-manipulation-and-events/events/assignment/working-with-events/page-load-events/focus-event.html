@@ -14,6 +14,15 @@
         <input type="password" placeholder="password">
     </form>
 
+<script>
+    const password = document.querySelector('input[type="password"]');
+    password.addEventListener('focus', (event) => {
+        event.target.style.backgroundColor = 'yellow';
+    });
 
+    password.addEventListener('blur', (event) => {
+        event.target.style.backgroundColor = '';
+    });
+</script>
 </body>
 </html>
