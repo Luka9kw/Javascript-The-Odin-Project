@@ -44,7 +44,7 @@
             console.log(event.screenX, event.screenY);  
         };
 
-        const debouncedThrottling = debounce(throttling, 100);
+        const debouncedThrottling = debounce(throttling, 500);
         
         track.addEventListener('mousemove', debouncedThrottling);
     </script>

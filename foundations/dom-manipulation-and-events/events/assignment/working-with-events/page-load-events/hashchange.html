@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hashchange</title>
+</head>
+
+<body>
+
+    <!-- a hash no fim do link serve para scrollar a página direto para uma seção da página -->
+    <!-- a hashchange serve para triggar o evento no momento em que ocorrer mudança no link -->
+
+    <script>
+        window.addEventListener('hashchange', () => {
+            console.log('The URL has has changed');
+        });
+
+        window.addEventListener('hashchange', () => {
+            console.log(`The current URL hash is ${location.hash}`);
+        });
+    </script>
+    
+</body>
+
+</html>
