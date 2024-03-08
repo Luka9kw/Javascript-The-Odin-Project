@@ -9,19 +9,25 @@
 </head>
 
 <body>
+
     <h1>Hello World!</h1>
     <div id="btn-container">
         <button id="btn1">Button 1</button>
         <button id="btn2">Button 2</button>
         <button id="btn3">Button 3</button>
     </div>
+    
+    <script>
+    
+        let list = document.querySelector('#btn-container');
+    
+        list.addEventListener('click', (event) => {
+            let btnPress = event.target
+            console.log(btnPress.textContent)
+        });
+    
+    </script>
 </body>
-<script>
-    let list = document.querySelector('#btn-container');
-    list.addEventListener('click', (event) => {
-        let btnPress = event.target
-        console.log(btnPress.textContent)
-    });
-</script>
+
 
 </html>
