@@ -7,10 +7,14 @@
     <title>dispatchEvent</title>
 </head>
 <body>
-    
     <script>
-        let clickEvent = new Event('click');
-        clickEvent.dispatchEvent(event);
+
+        let prompt = function() {
+            window.prompt(2313);
+        }
+        
+        let event = new Event('click');
+        prompt.dispatchEvent(event);
     </script>
 </body>
 </html>
