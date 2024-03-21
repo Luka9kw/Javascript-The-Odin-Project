@@ -1,15 +1,47 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Custom Event</title>
 </head>
+
 <body>
-    <h1>Hello World!</h1>
+    <div class="note">JS Custom Event Demo</div>
     <script>
-        
+
+        function highlight(element) {
+            const bgColor = 'yellow';
+            element.style.backgroundColor = bgColor;
+
+            // Para deixar o código mais flexivel, pode-se usar um custom event.
+            let event = new CustomEvent('highlight', {
+                detail: { backgroundColor: 'yellow' }
+            });
+
+            element.dispatchEvent(event);
+        };
+
+            
+
+        let div = document.querySelector('.note');
+
+        function addBorder(element) {
+            element.style.border = "solid 1px red";
+        };
+
+        div.addEventListener('highlight', function (e) {
+            addBorder(this);
+            console.log(e.detail);
+        });
+
+    highlight(div);
+
+
+
 
     </script>
 </body>
+
 </html>
