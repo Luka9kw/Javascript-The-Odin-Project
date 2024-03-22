@@ -1,11 +1,41 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Custom Event Test</title>
 </head>
+
 <body>
-    
+    <h1 id="h1">One more time, Hello World!</h1>
+    <button id="btn">Change Colors</button>
+    <script>
+
+        let text = document.querySelector('#h1');
+        let btn = document.querySelector('#btn');
+        let bgColor = 'yellow';
+
+        // let customEvent = new CustomEvent()
+
+        function highlight(element, callback) {
+            element.style.backgroundColor = bgColor;
+
+            if(callback && typeof callback == 'function') {
+                callback(element);
+            };
+        }
+
+        let addBorder = function(element) {
+            element.style.border = 'solid 1px black';
+        };
+
+        btn.addEventListener('click', () => {
+            highlight(text, addBorder);
+        })
+
+    </script>
+
 </body>
+
 </html>
