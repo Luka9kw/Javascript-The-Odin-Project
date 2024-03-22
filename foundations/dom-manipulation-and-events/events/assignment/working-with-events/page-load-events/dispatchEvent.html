@@ -7,6 +7,7 @@
     <title>dispatchEvent</title>
 </head>
 <body>
+    <button class="btn">Test</button>
     <script>
 
         let prompt = function() {
@@ -15,6 +16,23 @@
         
         let event = new Event('click');
         prompt.dispatchEvent(event);
+
+
+        let btn = document.querySelector('.btn')
+        btn.addEventListener('click', function() {
+            alert('Mouse Clicked');
+        });
+
+        let clickEvent = new MouseEvent('click', {
+            bubbles: true,
+            cancelable: true,
+            clientX: 150,
+            clientY: 150
+        });
+
+        btn.dispatchEvent(clickEvent);
+        console.log(clickEvent.isTrusted);
+
     </script>
 </body>
 </html>
