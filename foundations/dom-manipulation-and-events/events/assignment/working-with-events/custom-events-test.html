@@ -14,25 +14,57 @@
 
         let text = document.querySelector('#h1');
         let btn = document.querySelector('#btn');
-        let bgColor = 'yellow';
 
-        // let customEvent = new CustomEvent()
+        // Seletor de cores aleatórias
+        let randomColor = ''; 
+        function randomColorPicker() {
+            let r = Math.floor(Math.random() * 256);
+            let g = Math.floor(Math.random() * 256);
+            let b = Math.floor(Math.random() * 256);
+            
+            randomColor = `rgb(${r}, ${g}, ${b})`;
+            console.log(randomColor)
+            return randomColor;
+        }
 
+        // Acrescenta background e borda usando callback
         function highlight(element, callback) {
-            element.style.backgroundColor = bgColor;
+            element.style.backgroundColor = randomColor;
 
-            if(callback && typeof callback == 'function') {
+            if (callback && typeof callback == 'function') {
                 callback(element);
             };
         }
 
-        let addBorder = function(element) {
+        let addBorder = function (element) {
             element.style.border = 'solid 1px black';
         };
 
+        // Removedor de estilo
+        function styleRemover(element) {
+            element.style.backgroundColor = '';
+            element.style.border = 'none';
+        }
+
+        // Ativador de evento automático
+        let isHighlighted = false;
         btn.addEventListener('click', () => {
-            highlight(text, addBorder);
-        })
+            if (!isHighlighted) {
+                randomColorPicker();
+                highlight(text, addBorder);
+                isHighlighted = true;
+            }
+            else {
+                styleRemover(text)
+                isHighlighted = false;
+            }
+        }
+        )
+        function autoClicker() {
+            let clickEvent = new Event('click');
+            btn.dispatchEvent(clickEvent);
+        }
+        setInterval(autoClicker, 2000)
 
     </script>
 
