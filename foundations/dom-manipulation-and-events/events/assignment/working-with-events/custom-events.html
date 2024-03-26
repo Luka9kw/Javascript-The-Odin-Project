@@ -8,38 +8,61 @@
 </head>
 
 <body>
-    <div class="note">JS Custom Event Demo</div>
+    <h1 id="h1">Javascript Custom Event</h1>
     <script>
+
+        //     function highlight(element) {
+        //         const bgColor = 'yellow';
+        //         element.style.backgroundColor = bgColor;
+
+        //         // Para deixar o código mais flexivel, pode-se usar um custom event.
+        //         let event = new CustomEvent('highlight', {
+        //             detail: { backgroundColor: 'yellow' }
+        //         });
+
+        //         element.dispatchEvent(event);
+        //     };
+
+
+
+        //     let div = document.querySelector('.note');
+
+        //     function addBorder(element) {
+        //         element.style.border = "solid 1px red";
+        //     };
+
+        //     div.addEventListener('highlight', function (e) {
+        //         addBorder(this);
+        //         console.log(e.detail);
+        //     });
+
+        // highlight(div);
+        let text = document.querySelector('#h1');
 
         function highlight(element) {
             const bgColor = 'yellow';
             element.style.backgroundColor = bgColor;
 
-            // Para deixar o código mais flexivel, pode-se usar um custom event.
             let event = new CustomEvent('highlight', {
-                detail: { backgroundColor: 'yellow' }
+                detail: {
+                    backgroundColor: bgColor
+                }
+
             });
 
             element.dispatchEvent(event);
         };
 
-            
-
-        let div = document.querySelector('.note');
-
-        function addBorder(element) {
-            element.style.border = "solid 1px red";
+        function addBorder(elem) {
+            elem.style.border = 'solid 1px red'
         };
 
-        div.addEventListener('highlight', function (e) {
+        text.addEventListener('highlight', function (e) {
             addBorder(this);
-            console.log(e.detail);
-        });
+            console.log(e.detail)
+        })
 
-    highlight(div);
-
-
-
+        highlight(text)
 
     </script>
 </body>
